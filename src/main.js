@@ -2,9 +2,36 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+window.onload = () => {
+  let randomNumber = Math.random() * 10;
+  document.querySelector("#excuse").innerHTML = generateExcuse();
+  console.log("Hello Rigo from the console! ");
+};
 
-window.onload = function() {
-  console.log("Hello Rigo from the console!");
+let generateExcuse = () => {
+  let who = ["The neighbor", "My cousin", "His dog", "My car"];
+  let action = [" spied", " mowed", " destroyed", " crashed"];
+  let what = [" my computer", " the  yard", " into the house"];
+  let when = [
+    " before the instructions from the professor.",
+    " on point with the schedule.",
+    " when the assignment was finished.",
+    " during my break time.",
+    " while I was doing the dishes."
+  ];
+
+  let whoIndex = Math.floor(Math.random() * who.length);
+  let actionIndex = Math.floor(Math.random() * action.length);
+  let whatIndex = Math.floor(Math.random() * what.length);
+  let whenIndex = Math.floor(Math.random() * when.length);
+
+  return (
+    who[whoIndex] +
+    "" +
+    action[actionIndex] +
+    "" +
+    what[whatIndex] +
+    "" +
+    when[whenIndex]
+  );
 };
